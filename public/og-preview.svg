@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#203b2c"/>
+  <circle cx="1005" cy="320" r="300" fill="#2c4937"/>
+  <circle cx="1005" cy="320" r="225" fill="none" stroke="#d6c49c" stroke-opacity=".38"/>
+  <circle cx="1005" cy="320" r="190" fill="none" stroke="#d6c49c" stroke-opacity=".24"/>
+  <path d="M1080 177c-120 9-220 50-242 148-15 58 23 101 76 101 88 0 151-133 166-249Z" fill="none" stroke="#e5e8da" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M810 481c38-89 105-157 202-216M944 251c21 21 31 45 29 74" fill="none" stroke="#d4bc8d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="84" y="190" fill="#e6e9df" font-family="Arial,sans-serif" font-size="27" letter-spacing="8">VETERINARY &amp; POULTRY SOLUTIONS</text>
+  <text x="78" y="304" fill="#f7f4e9" font-family="Georgia,serif" font-size="98">FARMORA</text>
+  <text x="84" y="368" fill="#d9e0d5" font-family="Georgia,serif" font-style="italic" font-size="43">Better care. Stronger farms.</text>
+  <path d="M85 422h410" stroke="#c2aa77" stroke-width="2"/>
+  <text x="84" y="472" fill="#c9d2c5" font-family="Arial,sans-serif" font-size="19" letter-spacing="1">A DIGITAL SHOWCASE CONCEPT FOR PAKISTAN</text>
+</svg>
