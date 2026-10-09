@@ -8,7 +8,7 @@ export function ProductCard({ product, onSelect, onInquire }: Props) {
   return (
     <article className="product-card">
       <button className="product-visual" type="button" onClick={() => onSelect(product)} aria-label={`View details for ${product.name}`}>
-        <ImageFrame src={product.image} alt={product.imageAlt} />
+        <ImageFrame src={product.image} alt={product.imageAlt} sizes="(max-width: 480px) 100vw, (max-width: 760px) 50vw, (max-width: 1100px) 33vw, 400px" />
         <span className="product-index">{product.label}</span>
         <span className="quick-view">Quick view <Icon name="arrow" size={16} /></span>
       </button>

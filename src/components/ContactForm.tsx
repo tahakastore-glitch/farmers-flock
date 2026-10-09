@@ -1,25 +1,28 @@
-import { useEffect, useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { Icon } from '../Icons'
 import { getWhatsAppUrl } from '../config'
 
-type Props = { initialMessage: string }
+type Props = { initialMessage: string; prefillRevision: number }
 type Fields = { name: string; business: string; phone: string; email: string; inquiry: string; message: string }
 type FieldName = keyof Fields
 const initialFields: Fields = { name: '', business: '', phone: '', email: '', inquiry: '', message: '' }
 
-export function ContactForm({ initialMessage }: Props) {
+export function ContactForm({ initialMessage, prefillRevision }: Props) {
   const [fields, setFields] = useState<Fields>(initialFields)
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
   const [status, setStatus] = useState('')
   const [sentDemo, setSentDemo] = useState(false)
+  const messageRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     if (initialMessage) {
       setFields((current) => ({ ...current, message: initialMessage }))
+      setErrors((current) => ({ ...current, message: undefined }))
       setStatus('')
       setSentDemo(false)
+      window.requestAnimationFrame(() => messageRef.current?.focus({ preventScroll: true }))
     }
-  }, [initialMessage])
+  }, [initialMessage, prefillRevision])
 
   const whatsappUrl = getWhatsAppUrl(`FARMORA inquiry\nName: ${fields.name}\nBusiness: ${fields.business}\nInquiry: ${fields.inquiry}\nMessage: ${fields.message}`)
 
@@ -103,7 +106,7 @@ export function ContactForm({ initialMessage }: Props) {
           </div>
           <div className="form-field form-wide">
             <label htmlFor="message">How can we help? <span>*</span></label>
-            <textarea {...fieldProps('message')} rows={4} placeholder="Tell us a little about what you are looking for…" />
+            <textarea {...fieldProps('message')} ref={messageRef} rows={4} placeholder="Tell us a little about what you are looking for…" />
             {errors.message && <small className="field-error" id="message-error">{errors.message}</small>}
           </div>
         </div>
